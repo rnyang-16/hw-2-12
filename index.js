@@ -76,7 +76,9 @@ async function renderPdf(user_info, repo_info) {
 
   await writeFileAsync("profile.html", html);
 
-  var options = { format: 'Letter' };
+  var options = { "height": "14.5in",        
+                  "width": "10in", 
+                  "zoomFactor": "0.75"};
 
   // convert pdf from html
   pdf.create(html, options).toFile('./profile.pdf', function(err, res) {
